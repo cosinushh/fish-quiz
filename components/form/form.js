@@ -19,17 +19,26 @@ function createNewCard(newCardData) {
   newHeadline.textContent = newCardData.question;
   newArticle.append(newHeadline);
 
+  const newP = document.createElement("p");
+  newP.classList.add("card__answer");
+  newP.setAttribute("data-js", "answer");
+  newP.textContent = newCardData.answer;
+
   const newButton = document.createElement("button");
   newButton.classList.add("card__button-answer");
   newButton.setAttribute("type", "button");
   newButton.setAttribute("data-js", "answer-button");
   newButton.textContent = "Show answer";
-  newArticle.append(newButton);
+  newButton.addEventListener("click", () => {
+    newP.classList.toggle("card__answer--active");
+    if (newP.classList.contains("card__answer--active")) {
+      newButton.textContent = "Hide answer";
+    } else {
+      newButton.textContent = "Show answer";
+    }
+  });
 
-  const newP = document.createElement("p");
-  newP.classList.add("card__answer");
-  newP.setAttribute("data-js", "answer");
-  newP.textContent = newCardData.answer;
+  newArticle.append(newButton);
   newArticle.append(newP);
 
   const newUl = document.createElement("ul");
@@ -66,23 +75,26 @@ function createNewCard(newCardData) {
       </svg>
     </button>
   `;
+  const bookmarkButton = newBookmark.querySelector(
+    '[data-js="button-bookmark"]'
+  );
+
+  bookmarkButton.addEventListener("click", () => {
+    bookmarkButton.classList.toggle("bookmark--active");
+  });
+
   newArticle.append(newBookmark);
 
   cardList.append(newCard);
 }
 
 function countAndShowLetters(input, counter) {
-  const testContainer = document.createElement("p");
-  const n = 150 - input.value.length;
-  testContainer.textContent = `${n} characters left`;
-  console.log(testContainer);
-  input.after(testContainer);
-  //     if (input.value.length === 0) {
-  //     counter.textContent = "";
-  //   } else {
-  //     const n = 150 - input.value.length;
-  //     counter.textContent = `${n} characters left`;
-  //   }
+  if (input.value.length === 0) {
+    counter.textContent = "";
+  } else {
+    const n = 150 - input.value.length;
+    counter.textContent = `${n} characters left`;
+  }
 }
 
 questionInput.addEventListener("input", () => {
@@ -100,4 +112,8 @@ form.addEventListener("submit", (event) => {
   const data = Object.fromEntries(formData);
 
   createNewCard(data);
+  form.reset();
+  questionInput.focus();
+  questionCounter.textContent = "";
+  answerCounter.textContent = "";
 });
