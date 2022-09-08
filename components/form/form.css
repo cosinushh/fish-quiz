@@ -1,7 +1,12 @@
-.new-card {
+.newcard {
   padding: 10rem 2rem 8rem 2rem;
 }
 
-.new-card__label {
-  display: block;
+.newcard__label {
+}
+
+.newcard__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

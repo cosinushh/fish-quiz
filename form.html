@@ -6,38 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz-App</title>
     <link rel="stylesheet" href="./styles.css" />
-    <script src="./form.js" defer></script>
+    <script src="./components/form/form.js" defer></script>
   </head>
   <body>
     <header class="header">
       <h1 class="header__title">Your card</h1>
     </header>
     <main>
-      <section class="new-card">
-        <form class="form">
-          <label class="new-card__label" for="your-question"
+      <section class="newcard">
+        <form class="newcard__form" data-js="newcard-form">
+          <label class="newcard__label" for="your-question"
             >Your question:</label
           >
           <textarea
-            name="your-question"
+            name="question"
             id="your-question"
             cols="30"
             rows="10"
             data-js="your-question"
+            maxlength="150"
           ></textarea>
-          <label class="new-card__label" for="your-answer">Your answer:</label>
+          <p data-js="counter-question"></p>
+          <label class="newcard__label" for="your-answer">Your answer:</label>
           <textarea
-            name="your-answer"
+            name="answer"
             id="your-answer"
             cols="30"
             rows="10"
             data-js="your-answer"
+            maxlength="150"
           ></textarea>
-          <label class="new-card__label" for="your-tag">Tag:</label>
-          <input type="text" id="your-tag" name="your-tag" data-js="your-tag" />
+          <p data-js="counter-answer"></p>
+          <label class="newcard__label" for="your-tag">Tag:</label>
+          <input
+            type="text"
+            id="your-tag"
+            name="tag"
+            data-js="your-tag"
+            maxlength="150"
+          />
           <button type="submit" data-js="submit-button">Submit</button>
         </form>
       </section>
+      <ul class="card-list" data-js="card-list"></ul>
     </main>
     <nav class="navigation">
       <ul class="navigation__list">
@@ -94,6 +105,7 @@
               width="24px"
               fill="#000000"
             >
+              <path d="M0 0h24v24H0z" fill="none" />
               <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
             </svg>
           </a>
