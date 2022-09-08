@@ -1,0 +1,10 @@
+.new-card {
+  border: solid 5px red;
+  display: grid;
+  grid-template-columns: 100%;
+  /*padding: 10rem 2rem 8rem 2rem;*/
+}
+
+.new-card__label {
+  display: block;
+}

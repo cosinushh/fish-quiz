@@ -10,9 +10,35 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="header__title">Quiz-App</h1>
+      <h1 class="header__title">Your card</h1>
     </header>
-    <main></main>
+    <main>
+      <section class="new-card">
+        <form class="form">
+          <label class="new-card__label" for="your-question"
+            >Your question:</label
+          >
+          <textarea
+            name="your-question"
+            id="your-question"
+            cols="30"
+            rows="10"
+            data-js="your-question"
+          ></textarea>
+          <label class="new-card__label" for="your-answer">Your answer:</label>
+          <textarea
+            name="your-answer"
+            id="your-answer"
+            cols="30"
+            rows="10"
+            data-js="your-answer"
+          ></textarea>
+          <label class="new-card__label" for="your-tag">Tag:</label>
+          <input type="text" id="your-tag" name="your-tag" data-js="your-tag" />
+          <button type="submit" data-js="submit-button">Submit</button>
+        </form>
+      </section>
+    </main>
     <nav class="navigation">
       <ul class="navigation__list">
         <li class="navigation__list-item">
