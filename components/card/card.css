@@ -16,6 +16,7 @@
   display: block;
   margin: 0 auto 2rem auto;
   padding: 1rem;
+  transition: 0.5s ease;
 }
 
 .card__button-answer:hover {

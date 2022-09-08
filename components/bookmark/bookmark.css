@@ -1,9 +1,10 @@
 .bookmark {
-  border: none;
+  border: 1px solid var(--black);
   padding: 0.5rem;
   border-radius: 50%;
-  background: var(--secondary);
-  color: var(--white);
+  background: var(--white);
+  color: var(--secondary);
+  transition: 0.5s ease;
 }
 
 .bookmark:hover {
@@ -11,7 +12,10 @@
 }
 
 .bookmark--active {
-  color: var(--black);
+  border: none;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: var(--white);
 }
 
 .bookmark__icon {

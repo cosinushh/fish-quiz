@@ -2,11 +2,23 @@
   padding: 10rem 2rem 8rem 2rem;
 }
 
-.newcard__label {
-}
-
 .newcard__form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.newcard__button {
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  display: block;
+  margin: 0 auto 2rem auto;
+  padding: 1rem;
+  transition: 0.5s ease;
+}
+
+.newcard__button:hover {
+  opacity: 0.75;
+  cursor: pointer;
 }
