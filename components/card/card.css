@@ -32,7 +32,6 @@
 
 .card__answer--active {
   display: block;
-  transition: 2s ease;
 }
 
 .card__button-bookmark {
